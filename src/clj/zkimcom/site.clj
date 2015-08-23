@@ -214,6 +214,7 @@
 (def index
   (hp/html5
     [:head
+     [:title "Zachary Kim's Portfolio"]
      [:meta {:charset "utf-8"}]
      [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}]
      [:link {:rel "stylesheet" :href "http://fonts.googleapis.com/css?family=Lato:400,700,300"}]
