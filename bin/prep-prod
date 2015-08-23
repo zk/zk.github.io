@@ -35,9 +35,6 @@ set -e
 
 git checkout master
 
-find . ! -regex '\.git|static' -delete
-#find ! -name 'static' -type d -exec rm -f {} +
-#shopt -s extglob && rm !(static)
-#rm -f !(static)
+find . | grep -v "\./static.*" | grep -v "\./\.git.*" | xargs rm
 
 popd > /dev/null
