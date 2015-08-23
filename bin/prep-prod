@@ -35,7 +35,7 @@ set -e
 
 git checkout master
 
-find . | grep -v "^\./\.git.*" | xargs rm -rf
+find . | grep -v "^\./\.git.*" | grep -v "^\.\.?$" | xargs rm -rf
 git checkout work -- static
 mv ./static/* ./
 rmdir static
