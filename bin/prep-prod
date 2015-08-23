@@ -35,6 +35,7 @@ set -e
 
 git checkout master
 
-find ! -name 'static' -type d -exec rm -f {} +
+#find ! -name 'static' -type d -exec rm -f {} +
+rm -f !(static)
 
 popd > /dev/null
