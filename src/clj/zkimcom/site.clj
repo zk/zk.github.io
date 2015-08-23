@@ -145,7 +145,8 @@
             :text-transform 'uppercase
             :font-weight 500
             :margin-bottom "20px"
-            :font-size "18px"}]
+            :font-size "18px"
+            :line-height "140%"}]
       [:p {:font-size "17px"
            :font-weight 400
            :line-height "150%"
