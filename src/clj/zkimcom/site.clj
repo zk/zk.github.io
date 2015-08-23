@@ -216,6 +216,7 @@
     [:head
      [:title "Zachary Kim's Portfolio"]
      [:meta {:charset "utf-8"}]
+     [:meta {:name "viewport" :content "initial-scale=1"}]
      [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}]
      [:link {:rel "stylesheet" :href "http://fonts.googleapis.com/css?family=Lato:400,700,300"}]
      [:link {:rel "stylesheet" :href "css/site.css"}]]
