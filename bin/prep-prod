@@ -35,6 +35,6 @@ set -e
 
 git checkout master
 
-find . | grep -v "\./static.*" | grep -v "\./\.git.*" | xargs rm -f
+find . | grep -v "\./static.*" | grep -v "\./\.git.*" | xargs rm -rf
 
 popd > /dev/null
