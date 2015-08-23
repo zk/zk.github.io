@@ -9,6 +9,17 @@ popd > /dev/null
 
 pushd $SP/.. > /dev/null
 
-git checkout master
+git ls-files --other --error-unmatch . >/dev/null 2>&1; ec=$?
+if test "$ec" = 0; then
+    echo "Untracked files found, aborting."
+    exit 1
+elif test "$ec" = 1; then
+    echo "No untracked files, proceeding."
+else
+    echo "Error checking untracked files status."
+    exit 1
+fi
+
+#git checkout master
 
 #find ! -name 'file.txt' -type f -exec rm -f {} +
