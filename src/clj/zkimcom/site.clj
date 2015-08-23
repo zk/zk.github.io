@@ -1,7 +1,36 @@
 (ns zkimcom.site
   (:require [hiccup.core :as hc]
             [hiccup.page :as hp]
-            [garden.core :refer [css]]))
+            [garden.core :refer [css]]
+            [garden.units :refer [px px-]]
+            [garden.stylesheet :refer [at-media]]))
+
+(def screen-lg-min (px 1200))
+
+(def screen-md-min (px 992))
+(def screen-md-max (px- screen-lg-min 1))
+
+(def screen-sm-min (px 768))
+(def screen-sm-max (px- screen-md-min 1))
+
+(def screen-xs-min (px 480))
+(def screen-xs-max (px- screen-sm-min 1))
+
+(def key->breakpoint
+  {:xs {:max-width screen-xs-max}
+   :>sm {:min-width screen-sm-min}
+   :sm {:min-width screen-sm-min
+        :max-width screen-sm-max}
+   :md {:min-width screen-md-min
+        :max-width screen-md-max}
+   :lg {:min-width screen-lg-min}})
+
+(defn at-bp [breakpoint-key & rules]
+  (apply
+    at-media
+    (key->breakpoint breakpoint-key)
+    rules))
+
 
 (def stylesheet
   [[:html :body {:height "100%" :width "100%"}]
@@ -16,7 +45,10 @@
 
              :border-radius "50%"
              :background-color "#79D6FD"
-             :padding "10px"}]
+             :padding "10px"}
+     (at-bp :xs
+       [:& {:margin-top "30px"
+            :width "250px"}])]
     [:.heading {:font-weight 300
                 :font-size "33px"
                 :line-height "130%"
@@ -31,6 +63,8 @@
       :min-height "100%"
       :position 'relative
       :padding-bottom "70px"}
+     (at-bp :xs
+       [:& {:padding-top "0px"}])
      [:.scroll-down
       {:position 'absolute
        :bottom 0
@@ -60,6 +94,8 @@
     [:.nav
      {:margin-bottom "25px"
       :visibility 'hidden}
+     (at-bp :xs
+       [:& {:display 'none}])
      [:ul
       {:padding-left 0}
       [:li {:display 'inline-block
@@ -215,7 +251,7 @@
   (hp/html5
     [:head
      [:title "Zachary Kim's Portfolio"]
-     [:meta {:charset "utf-8"}]
+     [:meta {:http-equiv "Content-Type" :content "text/html" :charset "utf-8"}]
      [:meta {:name "viewport" :content "initial-scale=1"}]
      [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}]
      [:link {:rel "stylesheet" :href "http://fonts.googleapis.com/css?family=Lato:400,700,300"}]
@@ -260,7 +296,7 @@
              [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]
             ]]]]]]
       [:div.scroll-down
-       "⤓"]]
+       "&darr;"]]
      #_[:div.section.about
         [:h2 "About Me"]
         [:div.container

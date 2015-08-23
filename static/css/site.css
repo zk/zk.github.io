@@ -23,6 +23,15 @@ body .logo {
   margin-bottom: 40px;
 }
 
+@media (max-width: 767px) {
+
+  body .logo {
+    margin-top: 30px;
+    width: 250px;
+  }
+
+}
+
 body .heading {
   font-weight: 300;
   font-size: 33px;
@@ -46,6 +55,14 @@ body .above-fold {
   min-height: 100%;
   position: relative;
   padding-bottom: 70px;
+}
+
+@media (max-width: 767px) {
+
+  body .above-fold {
+    padding-top: 0px;
+  }
+
 }
 
 body .above-fold .scroll-down {
@@ -93,6 +110,14 @@ body .contact-items .contact-logo {
 body .nav {
   margin-bottom: 25px;
   visibility: hidden;
+}
+
+@media (max-width: 767px) {
+
+  body .nav {
+    display: none;
+  }
+
 }
 
 body .nav ul {
