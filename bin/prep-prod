@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 # Script Dir
 pushd `dirname $0` > /dev/null
@@ -9,7 +9,7 @@ popd > /dev/null
 
 pushd $SP/.. > /dev/null
 
-git ls-files --other --error-unmatch . >/dev/null 2>&1; ec=$?
+git ls-files --exclude-standard --other --error-unmatch . >/dev/null 2>&1; ec=$?
 if test "$ec" = 0; then
     echo "Untracked files found, aborting."
     exit 1
@@ -20,6 +20,21 @@ else
     exit 1
 fi
 
-#git checkout master
+git diff-files --quiet >/dev/null 2>&1; ec=$?
+if test "$ec" = 1; then
+    echo "Uncommitted changes found, aborting."
+    exit 1
+elif test "$ec" = 0; then
+    echo "No uncommitted changes, proceeding."
+else
+    echo "Error checking uncommitted changes status."
+    exit 1
+fi
 
-#find ! -name 'file.txt' -type f -exec rm -f {} +
+set -e
+
+git checkout master
+
+find ! -name 'static' -type d -exec rm -f {} +
+
+popd > /dev/null
