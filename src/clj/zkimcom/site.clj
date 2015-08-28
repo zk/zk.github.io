@@ -88,7 +88,8 @@
     [:.contact-items
      {:text-align 'left}
      [:.contact {:display 'block
-                 :margin-bottom "30px"}
+                 :margin-bottom "30px"
+                 :height "35px"}
       #_[:&.active {:transform "translateY(30px)"}]
       [:img {:vertical-align 'middle
              :display 'inline-block

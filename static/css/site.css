@@ -103,6 +103,7 @@ body .contact-items {
 body .contact-items .contact {
   display: block;
   margin-bottom: 30px;
+  height: 35px;
 }
 
 body .contact-items .contact img {
