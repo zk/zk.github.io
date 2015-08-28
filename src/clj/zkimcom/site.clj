@@ -97,7 +97,7 @@
            :line-height "100%"
            :display 'inline-block}]]
      [:.contact-logo
-      {:height "30px"
+      {:width "30px"
        :margin-left 0
        :margin "0 30px"}]]
 
@@ -296,16 +296,20 @@
              "."]]
            [:div.contact-items
             [:div.contact
-             [:img.contact-logo {:src "/images/email-logo.png"}]
+             [:img.contact-logo
+              {:src "/images/email-logo.png"}]
              [:a {:href "mailto:zachary.kim@gmail.com"} "zachary.kim@gmail.com"]]
             [:div.contact
-             [:img.contact-logo {:src "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"}]
+             [:img.contact-logo
+              {:src "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"}]
              [:a {:href "https://github.com/zk"} "zk"]]
             [:div.contact
-             [:img.contact-logo {:src "/images/twitter-logo.png"}]
+             [:img.contact-logo
+              {:src "/images/twitter-logo.png"}]
              [:a {:href "https://twitter.com/heyzk"} "@heyzk"]]
             [:div.contact
-             [:img.contact-logo {:src "/images/linkedin-logo.png"}]
+             [:img.contact-logo
+              {:src "/images/linkedin-logo.png"}]
              [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]
             ]]]]]]
       [:div.scroll-down
