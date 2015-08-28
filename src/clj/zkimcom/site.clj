@@ -35,20 +35,30 @@
 (def stylesheet
   [[:html :body {:height "100%" :width "100%"}]
    [:body {:font-family "'Lato', sans-serif"}
-    [:.nowrap {:white-space 'nowrap}]
-    [:.logo {:max-width "100%"
-             :display 'block
-             :margin-left 'auto
-             :margin-right 'auto
-             :margin-top "70px"
-             :margin-bottom "40px"
-
-             :border-radius "50%"
-             :background-color "#79D6FD"
-             :padding "10px"}
+    [:.profile-badge
+     {;;:border "solid #ccc 1px"
+      :margin-left 'auto
+      :margin-right 'auto
+      :margin-top "70px"
+      :margin-bottom "40px"
+      :position 'relative}
      (at-bp :xs
        [:& {:margin-top "30px"
-            :width "250px"}])]
+            :width "250px"}])
+     [:.badge-animation
+      {:position 'absolute
+       :width "100%"
+       :height "100%"
+       ;;:z-index -1
+       }
+      [:svg {:width "100%" :height "100%"}]]
+     [:.logo {:width "100%"
+              :height "100%"
+              :display 'block
+              :border-radius "50%"
+              :background-color "#79D6FD"
+              :padding "10px"}]]
+    [:.nowrap {:white-space 'nowrap}]
     [:.heading {:font-weight 300
                 :font-size "33px"
                 :line-height "130%"
@@ -264,7 +274,9 @@
         [:div.col-sm-12.col-md-10.col-md-offset-1
          [:div.row
           [:div.col-sm-4
-           [:img.logo {:src "/images/profile-pic.png"}]]
+           [:div.profile-badge
+            [:div.badge-animation]
+            [:img.logo {:src "/images/profile-pic.png"}]]]
           [:div.col-sm-8
            [:div.nav
             [:ul
