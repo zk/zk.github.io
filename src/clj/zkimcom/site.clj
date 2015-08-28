@@ -202,7 +202,7 @@
       [:h4 "Havana, July 2015"]
       [:p "I was given the opportunity to speak at the "
        [:a {:href "http://www.meetup.com/merchise/events/223604638/"} "Merchise Startup Circle's July 2015 event"]
-       " about my experiences as CTO of Zaarly, and about Entrepreneurial life in Silicon Valley. Topics covered included Zaarly's technical stack and processes, early-stage product approaches, securing angel and VC funding, and which snack foods cause exponential growth."]]
+       " about my experiences as Zaarly's CTO, and about entrepreneurial life in Silicon Valley. Topics covered included Zaarly's technical stack and processes, early-stage product approaches, securing Angel and VC funding, and which snack foods cause exponential growth."]]
      [:div.divider]
      [:div.featured-work-item
       [:div.header {:style "background-image: url('/images/recent_projects/celltracker.png');"}
