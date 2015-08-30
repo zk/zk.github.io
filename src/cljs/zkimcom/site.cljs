@@ -2,7 +2,7 @@
   (:require [vee.ops :as ops]
             [dommy.core :refer-macros [sel1]]
             [clojure.string :as str]
-            [reagent.core :as reagent]
+            [reagent.core :as rea]
             [cljs.core.async :as async
              :refer [<! >! chan close! sliding-buffer put! take! alts! timeout pipe mult tap]]
             [clojure.string :as str]
@@ -11,48 +11,38 @@
 
 (enable-console-print!)
 
-(defn $svg []
+(defn $svg [!nodes]
   [:svg
-   #_[:circle {:cx "50%" :cy "50%" :r "20%" :fill "yellow"}]])
+   (for [{:keys [index cx cy]} @!nodes]
+     ^{:key index} [:circle {:cx cx :cy cy :r 20 :fill "green"}])])
 
-(defn mk-tick [nodes data]
-  (fn [e]
-    #_(.data data (into-array [{:cx 10 :cy 10}]))))
+(defn tick [delta !nodes]
+  (swap! !nodes
+    (fn [ns]
+      (->> ns
+           (map
+             (fn [{:keys [index] :as n}]
+               (assoc n
+                 :cy (+ (*
+                          (.sin js/Math
+                            (*
+                              (/ index 10)
+                              js/Math.PI
+                              2))
+                          100)
+                       150))))))))
 
 (defn init []
-  (reagent/render-component
-    [$svg]
-    (sel1 :.badge-animation))
-  (let [nodes (->> (range 10)
-                   (map #(hash-map
-                           :index %
-                           :cx (* 100 (rand))
-                           :cy (* 100 (rand)))))
-        data (-> js/d3
-                 (.selectAll "svg")
-                 (.selectAll ".node")
-                 (.data (into-array nodes)))
-        force (-> (.. js/d3 -layout force)
-                  (.nodes nodes)
-                  (.size #js [300 300]))
-        node (-> data
-                 (.enter)
-                 (.append "circle")
-                 (.attr "cx" (fn [d] (:cx d)))
-                 (.attr "cy" (fn [d] (:cy d)))
-                 (.attr "fill" "green")
-                 (.attr "stroke" "blue")
-                 (.attr "r" (fn [d] "20"))
-                 (.call (.-drag force)))]
-    (-> js/d3
-        (.selectAll "svg")
-        (.selectAll ".node")
-        #_(.exit)
-        (.remove))
-    (-> force
-        (.on "tick" (mk-tick nodes data))
-        (.start))))
+  (let [!nodes (rea/atom (->> (range 10)
+                              (map-indexed #(hash-map
+                                              :index %1
+                                              :cx (+ 10 (* 30 %2))
+                                              :cy 30))))]
+    (tick 0 !nodes)
+    (rea/render-component
+      [$svg !nodes]
+      (sel1 :.badge-animation))))
 
 (defn reload-hook [] (init))
 
-#_(defonce start (init))
+(defonce start (init))
