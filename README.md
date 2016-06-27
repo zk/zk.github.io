@@ -19,7 +19,9 @@ for deployment.
 ### Deployment
 
 * Commit all changes
-* Run `$REPO/bin/prep-prod`
+* Run `$REPO/bin/prep-prod`, this will prep static files for deploy to gh pages and switch you to the `master` branch.
+* Push changes to `origin/master`
+* Changes should be live immediately
 
 
 ## License
