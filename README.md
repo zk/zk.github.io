@@ -3,34 +3,23 @@
 My personal site, which can be found at
 [http://zacharykim.com](http://zacharykim.com).
 
-## Stack
+## Overview
 
-Clojure, ring, moustache, hiccup, etc.  Deployed on Heroku.
+Static site generator. Work is done in `work` branch, `master` is used
+for deployment.
 
 
 ## Usage
 
 ### Development
 
-    git clone https://github.com/zk/zacharykim.com.git
-    cd ./zacharykim.com
-    lein deps
-    lein run -m zkimcom.heroku.web
+* Run `$REPO/bin/dev` to start the js / css compiler
+* Open `http://localhost:8000`
 
-### Production
+### Deployment
 
-    # http://devcenter.heroku.com/articles/quickstart
-
-    heroku create --stack cedar
-    git push heroku master
-
-
-## Work Profile
-
-Watch your threads, children!
-
-20-odd threads synchronously serving threads (`zkimcom.heroku.web`),
-plus 1 thread polling twitter and google reader for updates (`zkimcom.feeds`).
+* Commit all changes
+* Run `$REPO/bin/prep-prod`
 
 
 ## License

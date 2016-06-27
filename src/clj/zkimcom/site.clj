@@ -70,7 +70,7 @@
                :white-space 'nowrap}]
     [:.above-fold
      {:padding-top "50px"
-      :min-height "100%"
+      :min-height "85%"
       :position 'relative
       :padding-bottom "70px"}
      (at-bp :xs
@@ -81,9 +81,9 @@
        :left 0
        :right 0
        :text-align 'center
-       :padding-bottom "20px"
+       :padding-bottom "0"
        :font-size "22px"
-       :color "#ddd"}]]
+       :color "#888"}]]
     [:.callout {:margin-bottom "60px"}]
     [:.contact-items
      {:text-align 'left}

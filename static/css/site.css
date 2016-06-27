@@ -68,7 +68,7 @@ body .redact {
 
 body .above-fold {
   padding-top: 50px;
-  min-height: 100%;
+  min-height: 85%;
   position: relative;
   padding-bottom: 70px;
 }
@@ -87,9 +87,9 @@ body .above-fold .scroll-down {
   left: 0;
   right: 0;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 0;
   font-size: 22px;
-  color: #ddd;
+  color: #888;
 }
 
 body .callout {
