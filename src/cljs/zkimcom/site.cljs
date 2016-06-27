@@ -16,29 +16,26 @@
    (for [{:keys [index cx cy]} @!nodes]
      ^{:key index} [:circle {:cx cx :cy cy :r 20 :fill "green"}])])
 
-(defn tick [delta !nodes]
-  (swap! !nodes
-    (fn [ns]
-      (->> ns
-           (map
-             (fn [{:keys [index] :as n}]
-               (assoc n
-                 :cy (+ (*
-                          (.sin js/Math
-                            (*
-                              (/ index 10)
-                              js/Math.PI
-                              2))
-                          100)
-                       150))))))))
+(defn tick [nodes delta]
+  (->> nodes
+       (map
+         (fn [{:keys [index y] :as n}]
+           (assoc n
+             :cy (*
+                   (.sin js/Math
+                     (*
+                       y
+                       js/Math.PI
+                       2))))))))
 
 (defn init []
-  (let [!nodes (rea/atom (->> (range 10)
-                              (map-indexed #(hash-map
-                                              :index %1
-                                              :cx (+ 10 (* 30 %2))
-                                              :cy 30))))]
-    (tick 0 !nodes)
+  (let [!nodes (rea/atom
+                 (->> (range 10)
+                      (map-indexed #(hash-map
+                                      :index %1
+                                      :x (/ %2 10)
+                                      :y 0.5))))]
+    (swap! !nodes tick 0)
     (rea/render-component
       [$svg !nodes]
       (sel1 :.badge-animation))))
