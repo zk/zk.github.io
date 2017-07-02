@@ -41,10 +41,14 @@
       :margin-right 'auto
       :margin-top "70px"
       :margin-bottom "40px"
-      :position 'relative}
+      :position 'relative
+      :width "230px"
+      :height "230px"}
      (at-bp :xs
        [:& {:margin-top "30px"
-            :width "250px"}])
+            ;;:width "250px"
+            ;;:height "250px"
+            }])
      [:.badge-animation
       {:position 'absolute
        :width "100%"
@@ -171,7 +175,27 @@
                  :opacity 0.3}]
      [:.mockdbs
       [:.header {:color "black"}
-       [:.caption {:background "linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1))"}]]]]]
+       [:.caption {:background "linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1))"}]]]
+     [:.endup
+      [:.app-preview-chrome
+       {:position 'relative
+        :display 'inline-block
+        :margin-left 'auto
+        :margin-right 'auto
+        :margin-top "20px"}
+       [:.phone-bg
+        {:width "250px"
+         :height "514.3px"
+         :display 'block}]
+       [:video
+        {:width "225px"
+         :position 'absolute
+         :top "59px"
+         :left "13px"
+         :border "solid black 1px"}]]
+      [:h3 {:margin-top 0
+            :margin-bottom "20px"}]
+      [:p {:margin-bottom "30px"}]]]]
    [:.footer
     {:background-color "#333"
      :color 'white
@@ -194,10 +218,35 @@
    [:h2 "Featured Work / Talks"]
    [:div.container
     [:div.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
+     [:div.featured-work-item.endup
+      [:div.row
+       [:div.col-sm-6
+        [:h3 "Endup / Mobile Deep Dive"]
+        [:p "Good managers put in the effort to gain a cross-stack working knowledge of the technologies and methods used by their teams."]
+        [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's an cross-platform way to share your live location with anybody whether they're using an iOS or Android device, or a web browser."]]
+       [:div.col-sm-6
+        [:div.text-center
+
+         [:div.app-preview-chrome
+          [:img.phone-bg {:src "/images/phone-outline-dark.png"}]
+          [:video.app-preview
+           {:autoplay "autoplay"
+            :loop "loop"
+            :poster "http://next.veedev.com/img/hero-app-preview.png"}
+           [:source
+            {:src "http://next.veedev.com/vid/hero-demo.mp4"
+             :type "video/mp4"
+             :codecs "avc1.42E01E, mp4a.40.2"}]
+           [:source
+            {:src "http://next.veedev.com/vid/hero-demo.webm"
+             :type "video/webm"
+             :codecs "vp8, vorbis"}]]]
+         ]]]]
+     [:div.divider]
      [:div.featured-work-item.cuba
       [:div.header {:style "background-image: url('/images/cuba2.jpg'); background-position: bottom;"}
        [:div.caption.nogradient
-        [:h3.nowrap "Technology and Entrepreneurship"]
+        [:h3 "Technology and Entrepreneurship"]
         " "
         [:h3.nowrap "in Silicon Valley"]]]
       [:h4 "Havana, July 2015"]
@@ -224,7 +273,7 @@
       [:h4 "JVM, Clojure, ClojureScript, React"]
       [:p
        [:a {:href "http://clojuredocs.org"} "ClojureDocs"]
-       " is a community powered documentation and examples repository for the Clojure programming language. Supporting searchable documentation and user-submitted examples, the site is a popular destination for developers who are new to the language, receiving around 250k pageviews per month."]
+       " is a community powered documentation and examples repository for the Clojure programming language. Supporting searchable documentation and user-submitted examples, the site is a popular destination for developers who are new to the language. It's the most frequented Clojure resource on the internet, receiving around 250k pageviews per month."]
       [:p "Originally written in 2011 using Rails, the site was reimplemented in early 2015 using Clojure & ClojureScript to provide a more robust and dynamic user experience around searching and creating examples."]]
      [:div.divider]
      [:div.featured-work-item.mockdbs
@@ -284,7 +333,7 @@
              [:li [:a {:href "#"} "About"]]
              [:li [:a {:href "#"} "Featured Work & Talks"]]]]
            [:div.callout
-            [:h1.heading "Hey there. "]
+            [:h1.heading "Hey there!"]
             [:h1.heading
              "This is the professional portfolio of " [:strong "Zachary Kim"] ", an Engineer and Entrepreneur located in "
              [:span.redact "Honolulu, HI,"]
