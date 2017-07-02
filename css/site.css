@@ -13,13 +13,14 @@ body .profile-badge {
   margin-top: 70px;
   margin-bottom: 40px;
   position: relative;
+  width: 230px;
+  height: 230px;
 }
 
 @media (max-width: 767px) {
 
   body .profile-badge {
     margin-top: 30px;
-    width: 250px;
   }
 
 }
@@ -248,6 +249,37 @@ body .featured .mockdbs .header {
 
 body .featured .mockdbs .header .caption {
   background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+}
+
+body .featured .endup .app-preview-chrome {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+body .featured .endup .app-preview-chrome .phone-bg {
+  width: 250px;
+  height: 514.3px;
+  display: block;
+}
+
+body .featured .endup .app-preview-chrome video {
+  width: 225px;
+  position: absolute;
+  top: 59px;
+  left: 13px;
+  border: solid black 1px;
+}
+
+body .featured .endup h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+body .featured .endup p {
+  margin-bottom: 30px;
 }
 
 .footer {
