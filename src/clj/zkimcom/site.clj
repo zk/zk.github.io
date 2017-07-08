@@ -233,13 +233,13 @@
           [:video.app-preview
            {:autoplay "autoplay"
             :loop "loop"
-            :poster "http://next.veedev.com/img/hero-app-preview.png"}
+            :poster "https://next.veedev.com/img/hero-app-preview.png"}
            [:source
-            {:src "http://next.veedev.com/vid/hero-demo.mp4"
+            {:src "https://next.veedev.com/vid/hero-demo.mp4"
              :type "video/mp4"
              :codecs "avc1.42E01E, mp4a.40.2"}]
            [:source
-            {:src "http://next.veedev.com/vid/hero-demo.webm"
+            {:src "https://next.veedev.com/vid/hero-demo.webm"
              :type "video/webm"
              :codecs "vp8, vorbis"}]]]
          ]]]]
@@ -316,7 +316,7 @@
      [:meta {:http-equiv "Content-Type" :content "text/html" :charset "utf-8"}]
      [:meta {:name "viewport" :content "initial-scale=1"}]
      [:link {:rel "stylesheet" :href "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}]
-     [:link {:rel "stylesheet" :href "http://fonts.googleapis.com/css?family=Lato:400,700,300"}]
+     [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Lato:400,700,300"}]
      [:link {:rel "stylesheet" :href "/css/site.css"}]]
     [:body
      [:div.section.above-fold
@@ -361,8 +361,7 @@
             [:div.contact
              [:img.contact-logo
               {:src "/images/linkedin-logo.png"}]
-             [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]
-            ]]]]]]
+             [:a {:href "https://www.linkedin.com/pub/zachary-kim/3/a48/456"} "Zachary Kim"]]]]]]]]
       [:div.scroll-down
        "&darr;"]]
      #_[:div.section.about
