@@ -222,6 +222,7 @@
       [:div.row
        [:div.col-sm-6
         [:h3 "Endup / Mobile Deep Dive"]
+        [:p [:a {:href "https://www.endup.cc"} "Project Page"]]
         [:p "Good managers put in the effort to gain a cross-stack working knowledge of the technologies and methods used by their teams."]
         [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's an cross-platform way to share your live location with anybody whether they're using an iOS or Android device, or a web browser."]]
        [:div.col-sm-6
