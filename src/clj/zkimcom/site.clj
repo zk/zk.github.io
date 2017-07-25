@@ -224,7 +224,7 @@
         [:h3 "Endup / Mobile Deep Dive"]
         [:p [:a {:href "https://www.endup.cc"} "Project Page"]]
         [:p "Good managers put in the effort to gain a cross-stack working knowledge of the technologies and methods used by their teams."]
-        [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's an cross-platform way to share your live location with anybody whether they're using an iOS or Android device, or a web browser."]]
+        [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's a cross-platform way to share your live location with anybody whether they're using an iOS or Android device, or a web browser."]]
        [:div.col-sm-6
         [:div.text-center
 
@@ -275,7 +275,7 @@
       [:p
        [:a {:href "http://clojuredocs.org"} "ClojureDocs"]
        " is a community powered documentation and examples repository for the Clojure programming language. Supporting searchable documentation and user-submitted examples, the site is a popular destination for developers who are new to the language. It's the most frequented Clojure resource on the internet, receiving around 250k pageviews per month."]
-      [:p "Originally written in 2011 using Rails, the site was reimplemented in early 2015 using Clojure & ClojureScript to provide a more robust and dynamic user experience around searching and creating examples."]]
+      [:p "Originally written in 2011 using Rails, the site was reimplemented in early 2015 using Clojure & ClojureScript to provide a more robust and dynamic user experience around searching for and creating examples."]]
      [:div.divider]
      [:div.featured-work-item.mockdbs
       [:div.header.border
