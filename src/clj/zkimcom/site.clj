@@ -223,8 +223,7 @@
        [:div.col-sm-6
         [:h3 "Endup / Mobile Deep Dive"]
         [:p [:a {:href "https://www.endup.cc"} "Project Page"]]
-        [:p "Good managers put in the effort to gain a cross-stack working knowledge of the technologies and methods used by their teams."]
-        [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's a cross-platform way to share your live location with anybody whether they're using an iOS or Android device, or a web browser."]]
+        [:p "I wanted a project that would expose me to the mobile lifecycle from conception through design, implementation, and deployment on the app store, and Endup was the result. It's a cross-platform way to share your live location with anybody "]]
        [:div.col-sm-6
         [:div.text-center
 
@@ -341,15 +340,13 @@
              " "
              [:span.redact "Denver, CO,"]
              " "
-             [:span.redact "Chicago, IL,"]
-             " "
              [:span.nowrap "San Francisco, CA"]
              "."]]
            [:div.contact-items
             [:div.contact
              [:img.contact-logo
               {:src "/images/email-logo.png"}]
-             [:a {:href "mailto:zachary.kim@gmail.com"} "zachary.kim@gmail.com"]]
+             [:a {:href "mailto:zk@heyzk.com"} "zk@heyzk.com"]]
             [:div.contact
              [:img.contact-logo
               {:src "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"}]
@@ -378,7 +375,7 @@
            [:a {:href "#"} "⤒"]]
         [:div.contact-items
          [:div.contact
-          [:a {:href "mailto:zachary.kim@gmail.com"}
+          [:a {:href "mailto:zk@heyzk.com"}
            [:img.contact-logo {:src "/images/email-logo-light.png"}]]]
          [:div.contact
           [:a {:href "https://github.com/zk"}
